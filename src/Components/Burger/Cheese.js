@@ -1,7 +1,8 @@
 import React from "react";
+import style from "./burger.module.css";
 
 const Cheese = () => {
-    return <div>Cheese</div>;
+    return <div className={style.cheese}>Cheese</div>;
 };
 
 export default Cheese;
