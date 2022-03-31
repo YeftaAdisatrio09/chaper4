@@ -34,11 +34,7 @@ const Burger = () => {
                         return null;
                 }
             })}
-            {/* <Patty />
-            <Lettuce />
-            <Bun type="insert" />
-            <Cheese />
-            <Tomato /> */}
+
             <Bun />
         </React.Fragment>
     );

@@ -1,5 +1,11 @@
 import React from "react";
 import style from "./burger.module.css";
+//import styled from "styled-components";
+
+// const StyledButton = styled.button`
+//     margin: 100px;
+//     color: Red;
+// `;
 
 const Bun = (props) => {
     // return <div className={`${style.bun}`}>{props.type}</div>;
@@ -17,6 +23,11 @@ const Bun = (props) => {
             break;
     }
     return <div className={`${style.bun} ${bunClass}`}></div>;
+    // return (
+    //     <div className={`${style.bun} ${bunClass}`}>
+    //         <StyledButton>Button</StyledButton>
+    //     </div>
+    // );
 };
 
 export default Bun;
