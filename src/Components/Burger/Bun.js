@@ -20,7 +20,6 @@ const Bun = (props) => {
             break;
         default:
             bunClass = "";
-            break;
     }
     return <div className={`${style.bun} ${bunClass}`}></div>;
     // return (

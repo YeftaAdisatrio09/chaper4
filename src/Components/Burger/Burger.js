@@ -1,5 +1,5 @@
 //ga wajib
-import React from "react";
+import React, { useState } from "react";
 
 import Bun from "./Bun";
 import Cheese from "./Cheese";
@@ -7,13 +7,26 @@ import Lettuce from "./Lettuce";
 import Patty from "./Patty";
 import Tomato from "./Tomato";
 
-const Burger = () => {
-    const ingredients = ["patty", "lettuce", "patty", "bun", "patty", "chese", "patty", "tomato"];
+import style from "./burger.module.css";
+
+const Burger = (props) => {
+    //const [ingredients, setIngredients] = useState(["patty", "lettuce", "patty", "bun", "patty", "chese", "patty", "tomato"]);
+    //const ingredients = ["patty", "lettuce", "patty", "bun", "patty", "chese", "patty", "tomato"];
+
+    // const [ingredients, setIngredients] = useState([]);
+    // const addIngredients = (ingredients) => {
+    //     setIngredients((prevState) => {
+    //         const newIngridients = [ingredients, ...prevState];
+    //         console.log(newIngridients);
+
+    //         return newIngridients;
+    //     });
+    // };
 
     return (
-        <React.Fragment>
+        <div className={style.burger}>
             <Bun type="top" />
-            {ingredients.map((item, index) => {
+            {props.ingredients.map((item, index) => {
                 switch (item) {
                     case "patty":
                         return <Patty key={index} />;
@@ -24,7 +37,7 @@ const Burger = () => {
                     case "bun":
                         return <Bun type="insert" key={index} />;
 
-                    case "chese":
+                    case "cheese":
                         return <Cheese key={index} />;
 
                     case "tomato":
@@ -36,7 +49,12 @@ const Burger = () => {
             })}
 
             <Bun />
-        </React.Fragment>
+            {/* <button onClick={() => addIngredients("patty")}>patty</button>
+            <button onClick={() => addIngredients("lettuce")}>lettuce</button>
+            <button onClick={() => addIngredients("bun")}>bun</button>
+            <button onClick={() => addIngredients("chese")}>chese</button>
+            <button onClick={() => addIngredients("tomato")}>tomato</button> */}
+        </div>
     );
 };
 
