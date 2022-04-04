@@ -1,37 +1,37 @@
-import React from "react";
+import React, { useContext } from "react";
+import BurgerContext from "../../Contex/BurgerContext";
 
 import AddButton from "./AddButton";
 import MapItem from "./MapItem";
 import style from "./controller.module.css";
 
-const Controller = (props) => {
+const Controller = () => {
+    const ctx = useContext(BurgerContext);
     return (
         <>
             <div className={style.ingredients_selector}>
                 <h5>Add Ingridients</h5>
                 <div>
-                    <AddButton lable="Patty" clickHandler={() => props.addIngredientsHandler("patty")} />
-                    <AddButton lable="Lettuce" clickHandler={() => props.addIngredientsHandler("lettuce")} />
-                    <AddButton lable="Tomato" clickHandler={() => props.addIngredientsHandler("tomato")} />
-                    <AddButton lable="Cheese" clickHandler={() => props.addIngredientsHandler("cheese")} />
-                    <AddButton lable="Bun" clickHandler={() => props.addIngredientsHandler("bun")} />
+                    <AddButton lable="Patty" clickHandler={() => ctx.addIngredientsHandler("patty")} />
+                    <AddButton lable="Lettuce" clickHandler={() => ctx.addIngredientsHandler("lettuce")} />
+                    <AddButton lable="Tomato" clickHandler={() => ctx.addIngredientsHandler("tomato")} />
+                    <AddButton lable="Cheese" clickHandler={() => ctx.addIngredientsHandler("cheese")} />
+                    <AddButton lable="Bun" clickHandler={() => ctx.addIngredientsHandler("bun")} />
                 </div>
             </div>
             <div className={style.ingredients_map}>
-                {props.ingredients.map((item, index) => {
+                {ctx.ingredients.map((item, index) => {
                     return (
                         <>
                             <MapItem
                                 lable={item}
                                 key={index}
-                                removeHandler={() => props.removeIngredientsHandler(index)}
-                                upHandler={() => props.moveUpIngredientsHandler(index)}
-                                downHandler={() => props.moveDownIngredientsHandler(index)}
+                                removeHandler={() => ctx.removeIngredientsHandler(index)}
+                                upHandler={() => ctx.MoveUpIngredientsHandler(index)}
+                                downHandler={() => ctx.MoveDownIngredientsHandler(index)}
                                 firstItem={index === 0}
-                                lastItem={index === props.ingredients.length - 1}
-                            >
-                                {" "}
-                            </MapItem>
+                                lastItem={index === ctx.ingredients.length - 1}
+                            />
                         </>
                     );
                 })}

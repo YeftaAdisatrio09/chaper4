@@ -17,4 +17,4 @@ const MapItem = (props) => {
     );
 };
 
-export default "MapItem";
+export default MapItem;

@@ -1,19 +1,16 @@
 import React from "react";
 //import Layout from "../Layouts/Layout";
 
-import styled from "styled-components";
+import style from "./home.module.css";
 
 const Home = () => {
     return (
         <>
-            <div>Welcome to burger Maker</div>
-            <Button>Prest mee</Button>
+            <div className={style.home_container}>
+                <h1>Welcome to burger Maker</h1>
+            </div>
         </>
     );
 };
-
-const Button = styled.button`
-    background: blue;
-`;
 
 export default Home;

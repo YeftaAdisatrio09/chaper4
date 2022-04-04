@@ -2,7 +2,7 @@ import React from "react";
 import Navigation from "./Navigation";
 import MainContent from "./MainContent";
 
-const Layout = (props) => {
+const DefaultLayout = (props) => {
     return (
         <React.Fragment>
             <Navigation />
@@ -11,4 +11,4 @@ const Layout = (props) => {
     );
 };
 
-export default Layout;
+export default DefaultLayout;
